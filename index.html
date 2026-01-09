@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Qoo猫窝˶ - ˕ - ˶՞ | 239210306</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=ZCOOL+KuaiLe&family=Ma+Shan+Zheng&family=ZCOOL+QingKe+HuangYou&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 顶部猫咪装饰 -->
+        <div class="cat-header">
+            <div class="cat-ear left-ear"></div>
+            <div class="cat-ear right-ear"></div>
+            <h1>🐈 猫咪树洞 🐈‍⬛</h1>
+            <p class="subtitle">在这里，你可以分享任何心事，猫咪们会静静倾听～</p>
+        </div>
+
+        <!-- 留言表单 -->
+        <div class="form-container">
+            <form id="messageForm">
+                <div class="input-group">
+                    <input type="text" id="nickname" placeholder="想要咪怎么称呼你～" maxlength="20">
+                    <div class="cat-paw-input"></div>
+                </div>
+                <div class="input-group">
+                    <textarea id="content" placeholder="喵～有什么想说的吗？" rows="4" maxlength="500"></textarea>
+                    <div class="cat-paw-textarea"></div>
+                </div>
+                <button type="submit" class="cat-button">
+                    <span class="paw-icon">🐾</span> 发布留言
+                </button>
+                <div id="error-message" class="error-message"></div>
+            </form>
+        </div>
+
+        <!-- 留言列表 -->
+        <div class="messages-container">
+            <h2>🌳 最新留言 🌳</h2>
+            <div id="messagesList"></div>
+            <div id="emptyMessage" class="empty-state">
+                <div class="sleeping-cat">💖</div>
+                <p>还没有留言哦～猫咪在睡觉呢</p>
+            </div>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="cat-footer">
+            <p>© 2026 猫咪树洞 | 学号：239210306 | 苏隽曦</p>
+            <div class="cat-paws">
+                <span>🐾</span><span>🐾</span><span>🐾</span>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
