@@ -1,0 +1,313 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* 修改：使用系统默认字体 */
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue", "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+    background: linear-gradient(135deg, #f9f3ff 0%, #ffe9f3 100%);
+    background-image: 
+        radial-gradient(#ffd6e7 2px, transparent 2px),
+        radial-gradient(#c5e8ff 2px, transparent 2px);
+    background-size: 50px 50px;
+    background-position: 0 0, 25px 25px;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* 猫咪头部装饰 */
+.cat-header {
+    background: linear-gradient(45deg, #ffafcc, #cdb4db);
+    padding: 40px 30px 50px;
+    border-radius: 25px 25px 25px 25px;
+    margin-bottom: 30px;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(205, 180, 219, 0.4);
+    text-align: center;
+    border: 5px solid white;
+}
+
+.cat-ear {
+    position: absolute;
+    width: 30px;
+    height: 40px;
+    background: #ffafcc;
+    top: -20px;
+    border-radius: 50% 50% 0 0;
+}
+
+.cat-ear.left-ear {
+    left: 40px;
+    transform: rotate(-15deg);
+}
+
+.cat-ear.right-ear {
+    right: 40px;
+    transform: rotate(15deg);
+}
+
+.cat-header h1 {
+    /* 修改：使用系统中文字体 */
+    font-family: "STKaiti", "KaiTi", "SimKai", "STXingkai", "Xingkai SC", cursive;
+    font-size: 3.5em;
+    color: white;
+    text-shadow: 3px 3px 0 #a2d2ff;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.2em;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+/* 表单样式 */
+.form-container {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 8px 25px rgba(162, 210, 255, 0.2);
+    border: 3px dashed #ffafcc;
+    position: relative;
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.cat-paw-input::before,
+.cat-paw-textarea::before {
+    content: '🐾';
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    font-size: 1.2em;
+    opacity: 0.6;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #bde0fe;
+    border-radius: 20px;
+    font-size: 1.1em;
+    /* 修改：输入框使用系统字体 */
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    transition: all 0.3s ease;
+    background: #f8f9fa;
+}
+
+input:focus, textarea:focus {
+    outline: none;
+    border-color: #ffafcc;
+    box-shadow: 0 0 0 3px rgba(255, 175, 204, 0.2);
+    background: white;
+}
+
+textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* 猫咪按钮 */
+.cat-button {
+    background: linear-gradient(45deg, #a2d2ff, #cdb4db);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    /* 修改：按钮使用手写字体 */
+    font-family: "STKaiti", "KaiTi", "SimKai", cursive;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(162, 210, 255, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 0 auto;
+}
+
+.cat-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(162, 210, 255, 0.6);
+    background: linear-gradient(45deg, #ffafcc, #a2d2ff);
+}
+
+.cat-button:active {
+    transform: translateY(1px);
+}
+
+.paw-icon {
+    font-size: 1.3em;
+}
+
+/* 错误提示 */
+.error-message {
+    color: #ff6b6b;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 1.1em;
+    animation: shake 0.5s ease;
+}
+
+/* 留言列表 */
+.messages-container {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(255, 175, 204, 0.15);
+    border: 3px solid #bde0fe;
+}
+
+.messages-container h2 {
+    text-align: center;
+    color: #ffafcc;
+    margin-bottom: 25px;
+    /* 修改：标题使用手写字体 */
+    font-family: "STKaiti", "KaiTi", "SimKai", cursive;
+    font-size: 2em;
+}
+
+.message-card {
+    background: #f8f9ff;
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    border-left: 6px solid #a2d2ff;
+    position: relative;
+    transition: all 0.3s ease;
+    animation: slideIn 0.5s ease;
+}
+
+.message-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(162, 210, 255, 0.3);
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px dotted #bde0fe;
+}
+
+.nickname {
+    /* 修改：昵称使用手写字体 */
+    font-family: "STKaiti", "KaiTi", "SimKai", cursive;
+    font-size: 1.3em;
+    color: #ff8fab;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.nickname::before {
+    content: '🐈';
+}
+
+.time {
+    color: #8ac6d1;
+    font-size: 0.9em;
+}
+
+.content {
+    font-size: 1.1em;
+    line-height: 1.6;
+    color: #5a5a5a;
+    margin-bottom: 20px;
+}
+
+/* 点赞按钮 */
+.like-button {
+    background: #ffd6e7;
+    border: 2px solid #ffafcc;
+    padding: 8px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 1.1em;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    /* 修改：点赞按钮使用系统字体 */
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+}
+
+.like-button:hover {
+    background: #ffafcc;
+    transform: scale(1.05);
+}
+
+.like-button.liked {
+    background: #ff8fab;
+    color: white;
+    animation: bounce 0.5s ease;
+}
+
+/* 空状态 */
+.empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: #a2d2ff;
+}
+
+.sleeping-cat {
+    font-size: 4em;
+    margin-bottom: 20px;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* 页脚 */
+.cat-footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px;
+    color: #8ac6d1;
+    font-size: 0.9em;
+}
+
+.cat-paws {
+    margin-top: 10px;
+}
+
+.cat-paws span {
+    margin: 0 5px;
+    animation: pawWave 2s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.2s);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .cat-header h1 {
+        font-size: 2.5em;
+    }
+    
+    .cat-ear {
+        width: 20px;
+        height: 30px;
+    }
+    
+    .form-container,
+    .messages-container {
+        padding: 20px;
+    }
+    
+    input, textarea {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+}
